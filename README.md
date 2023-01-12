@@ -17,12 +17,13 @@ The Tweet-IDs are organized as follows:
 We have recently migrated our data collection to AWS. Because of our recent shift and upgrade of computing and network specifications, we're excited to announce that we are now able to collect (and consequently release) a significantly greater number of Tweet IDs. We will be continuing to leverage AWS for the foreseeable future - please be aware that from release v2.0 and onwards, there will be a significant increase in the number of Tweet-IDs contained in each hourly file. We are increasing the major version of the releases to reflect this change in collection infrastructure. No other parameters have changed (e.g. keywords tracked, accounts followed) that have not previously been documented, and there is not a gap in data collection as we switched to AWS, as we ensured that was an overlap in hours collected during the migration. 
 
 ### Other Notes
-* We will be continuously maintaining this database for the foreseeable future, and will be uploading new data on a weekly basis.  
+* We will be continuously maintaining this database for the foreseeable future, with new data being uploaded at least once every 2-3 weeks.  
 * There may be a few hours of missing data due to technical difficulties. We have done our best to recover as many Tweets from those time frames by using Twitter’s search API. 
 * We will keep a running summary of basic statistics as we upload data in each new release. 
 * The file keywords.txt and accounts.txt contains the updated keywords and accounts respectively that we tracked in our data collection. Each keyword and account will be followed by the date we began tracking them, and date we removed them (if the keyword or account has been removed) from our tracking list. 
 * Consider using tools such as the [Hydrator](https://github.com/DocNow/hydrator) and [Twarc](https://github.com/DocNow/twarc) to rehydrate the Tweet IDs. Instructions for both are in the next section. 
 * Hydrating may take a while, and Tweets may have been deleted since our initial collection. If that is the case, unfortunately you will not be able to get the deleted Tweets from querying Twitter's API. Ed Summers ([edsu](https://github.com/edsu)) hydrated the Tweets in release v1.0, taking approximately 25 hours to complete, and found that there was an approximate 6% of the Tweets that were deleted at the time of hydration, with final gzipped data size of 6.9 GB. 
+* We have seen an increased rate of errors from Twitter's API endpoint, resulting in more missing tweets starting mid-November 2022.  
 
 ## How to Hydrate
 
@@ -71,22 +72,22 @@ BibTeX:
 }
 ```
 
-# Statistics Summary (v2.104) 
-Number of Tweets : **2,678,308,702**
+# Statistics Summary (v2.104)
+Number of Tweets : **2,732,637,342**
 
-Language breakdown of top 10 most prevalent languages : 
+Language breakdown of top 10 most prevalent languages :
 | Language        | ISO     | No. tweets       | % total Tweets     |
 |-------------    |-----    |------------      |----------------    |
-| English         | en      | 1,715,690,818    | 64.06%             |
-| Spanish         | es      | 301,282,127      | 11.25%             |
-| Portuguese      | pt      | 104,730,270      | 3.91%              |
-| French          | fr      | 98,422,320       | 3.67%              |
-| Undefined       | und     | 75,293,221       | 2.81%              |
-| Indonesian      | in      | 73,470,820       | 2.74%              |
-| German          | de      | 61,746,609       | 2.31%              |
-| Japanese        | ja      | 38,802,214       | 1.45%              |
-| Thai            | th      | 37,447,015       | 1.4%               |
-| Italian         | it      | 30,735,089       | 1.15%              |
+| English         | en      | 1,752,902,076    | 64.15%             |
+| Spanish         | es      | 305,448,610      | 11.18%             |
+| Portuguese      | pt      | 106,554,138      | 3.9%               |
+| French          | fr      | 101,016,370      | 3.7%               |
+| Undefined       | und     | 75,489,676       | 2.76%              |
+| Indonesian      | in      | 73,955,333       | 2.71%              |
+| German          | de      | 63,388,826       | 2.32%              |
+| Japanese        | ja      | 40,055,653       | 1.47%              |
+| Thai            | th      | 37,881,897       | 1.39%              |
+| Italian         | it      | 31,471,016       | 1.15%              |
 
 # Known Gaps
 | Date          | Time              |
